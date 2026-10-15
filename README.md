@@ -147,6 +147,10 @@ Selected real application and Power BI screenshots, captured on 14 October 2026,
 |---|---|
 | ![Forecast page](screenshots/web-forecast.png) | ![Method page](screenshots/web-methodology.png) |
 
+| Declared-employment estimate | Descriptive segmentation |
+|---|---|
+| ![Declared-employment estimate](screenshots/web-employment-prediction.png) | ![Descriptive segmentation](screenshots/web-segmentation.png) |
+
 ### Power BI report pages
 
 | Overview | Portfolio |
@@ -157,9 +161,7 @@ Selected real application and Power BI screenshots, captured on 14 October 2026,
 |---|---|
 | ![Geography page](screenshots/powerbi-geography.png) | ![Employment and rates page](screenshots/powerbi-employment-rates.png) |
 
-One Talend job screenshot is included as an example of the local ETL design. It does not replace the original job files or prove that a job ran successfully.
-
-![Talend beneficiary and dimensions job](screenshots/talend-beneficiary-dimensions-job.png)
+Selected Talend job screenshots and the DWH table/model views are documented in [docs/etl.md](docs/etl.md) and [docs/data-warehouse.md](docs/data-warehouse.md). They illustrate the local design; they do not replace the original job files or prove that every job ran successfully.
 
 ## License
 

@@ -19,3 +19,23 @@ Les fichiers `.item` bruts ne sont pas publiés : le fichier `talend.project` du
 
 Le notebook public montre une extraction SQL aval de `fact_contract` et des dimensions pour construire le jeu de modélisation. Il ne remplace pas les jobs Talend.
 
+## Captures de jobs disponibles
+
+Les captures ci-dessous proviennent du dossier de démonstration Desktop du 14 octobre 2026. Elles montrent des composants et des noms de flux, jamais les lignes du fichier source. Deux images documentent le job `DIM_ACTIVITE_CONTRAT` : son design et une vue avec statistiques d’exécution visibles. Ces exemples ne constituent pas des journaux complets ni une preuve que les 13 jobs ont tous été exécutés avec succès.
+
+| Job / table cible | Capture |
+|---|---|
+| `DIM_ACTIVITE_CONTRAT` — design | ![Design du job DIM_ACTIVITE_CONTRAT](../screenshots/talend-dim-activite-contract.png) |
+| `DIM_ACTIVITE_CONTRAT` — vue d’exécution | ![Vue d’exécution du job DIM_ACTIVITE_CONTRAT](../screenshots/talend-dim-activite-contract-run.png) |
+| `DIM_BENEFICIAIRE` et dimensions de référence | ![Job bénéficiaire et dimensions de référence](../screenshots/talend-beneficiary-dimensions-job.png) |
+| `dim_contract` | ![Job dim_contract](../screenshots/talend-dim-contract.png) |
+| `DIM_ETAT_CIVIL` | ![Job DIM_ETAT_CIVIL](../screenshots/talend-dim-etat-civil.png) |
+| `DIM_FORME_CREDIT` | ![Job DIM_FORME_CREDIT](../screenshots/talend-dim-forme-credit.png) |
+| `DIM_GEOGRAPHIE` | ![Job DIM_GEOGRAPHIE](../screenshots/talend-dim-geographique.png) |
+| `DIM_NATURES_CREDITS` | ![Job DIM_NATURES_CREDITS](../screenshots/talend-dim-natures-credits.png) |
+| `DIM_PERIODICITE` | ![Job DIM_PERIODICITE](../screenshots/talend-dim-periodicite.png) |
+| `DIM_PROFESSION` | ![Job DIM_PROFESSION](../screenshots/talend-dim-profession.png) |
+| `fact_contract` | ![Job fact_contract](../screenshots/talend-fact-contract.png) |
+| `DIM_LISTE_ACTIVITE_PERSONNE` | ![Job DIM_LISTE_ACTIVITE_PERSONNE](../screenshots/talend-dim-activite-personne.png) |
+| `DIM_NIV_EDUCATION_PP` | ![Job DIM_NIV_EDUCATION_PP](../screenshots/talend-dim-education.png) |
+

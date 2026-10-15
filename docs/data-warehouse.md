@@ -27,6 +27,12 @@ erDiagram
 
 The fact table stores contract-level measures such as initial amount, installment, rates/fees, installment count, grace months, and employment declarations. Date keys cover contract, disbursement, first/last installment, and radiation. See [`docs/powerbi.md`](powerbi.md) for how the report uses these fields and its KPI limits.
 
+The following two Desktop captures show the table list and a relationship view available during project work. They are visual references; the DDL in `sql/schema.sql` remains the precise source for exported column and constraint definitions.
+
+| PostgreSQL table list | DWH relationship view |
+|---|---|
+| ![PostgreSQL DWH table list](../screenshots/postgresql-dwh-table-list.png) | ![DWH relationship view](../screenshots/dwh-relationship-view.png) |
+
 ## Join paths shown in the notebook
 
 The SQL uses joins from fact_contract.contract_id to dim_contract.contract_id and fact_contract.BENEFICIAIRE_ID to dim_beneficiaire.BENEFICIAIRE_ID; beneficiary keys to education, profession, civil-status, and personal-activity dimensions; and fact keys to contract-activity, credit-form, credit-nature, periodicity, geography, and date dimensions. Separate date roles are used for contract, disbursement, and radiation dates.
