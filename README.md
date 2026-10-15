@@ -1,6 +1,6 @@
 # Microcredit BI & Data Platform
 
-An internship project exploring microcredit portfolio data through a local machine-learning API and an Angular web application. It also contains a notebook that queries a PostgreSQL data warehouse. This repository documents the verified software components and identifies ETL, warehouse, and Power BI artifacts that are not included here.
+An internship project exploring microcredit portfolio data through Talend ETL, a PostgreSQL data warehouse, a local machine-learning API, an Angular web application, and a Power BI report. This repository documents verified components and clearly marks the private data and external artifacts that are not distributed.
 
 > **Data protection:** this repository intentionally excludes contract-level data, trained model files, local credentials, and the original notebook. The API requires approved local copies of its model and aggregate files before its prediction endpoints can operate.
 
@@ -17,7 +17,7 @@ Explore historical microcredit contracts and make portfolio patterns accessible 
 ```mermaid
 flowchart LR
     S["Excel source and reference files (not included)"] --> T["Talend ETL (13 jobs inspected locally; sources and job exports excluded)"]
-    T -. "warehouse scripts not present" .-> D["PostgreSQL DWH (queried by notebook)"]
+    T -. "jobs inventoried; source files excluded" .-> D["PostgreSQL DWH (schema-only SQL published)"]
     D --> Q["SQL extraction in notebook"]
     Q --> P["Local contract dataset (excluded from publication)"]
     P --> M["Notebook and employment training script"]
@@ -27,7 +27,7 @@ flowchart LR
     B["Power BI Service report (external embed configured in Angular)"] -. "iframe" .-> W
 ```
 
-Dashed links represent dependencies whose DWH DDL and Power BI project are not included. Talend job inventory is documented, but local job files and source data are excluded, so the ETL is not reproducible from this repository.
+Dashed links represent dependencies whose original source files are not distributed. The schema-only DDL and aggregate SQL examples document the warehouse structure, but do not include its data. The report screenshots document the visible pages; the Power BI project and refresh configuration remain external. Talend job inventory is documented, but the ETL is not reproducible from this repository without the original authorized jobs and source files.
 
 ## Implemented in this folder
 
@@ -40,8 +40,8 @@ Dashed links represent dependencies whose DWH DDL and Power BI project are not i
 ## Partial or external components
 
 - **Talend ETL:** 13 local Talend jobs were inspected read-only. Their inventory and observed component types are summarized in [docs/etl.md](docs/etl.md); raw jobs and source data are excluded for security and privacy.
-- **PostgreSQL DWH:** the notebook contains a query against fact_contract and related dimensions. DDL, initialization scripts, credentials, and a portable DWH backup are absent.
-- **Power BI:** Angular is configured to embed a Power BI Service report. A PBIX/PBIP project and screenshot exports are absent.
+- **PostgreSQL DWH:** the notebook contains a query against fact_contract and related dimensions. [`sql/schema.sql`](sql/schema.sql) provides schema-only DDL and [`sql/analysis.sql`](sql/analysis.sql) contains safe aggregate query examples. No data rows, credentials, or portable backup are published.
+- **Power BI:** Angular is configured to embed a Power BI Service report. Four captured report pages and KPI notes are documented in [docs/powerbi.md](docs/powerbi.md); the PBIX/PBIP project and refresh configuration are external.
 - **ML runtime artifacts:** the API loads local model and aggregate files. They are excluded because they were derived from company contract data. A public clone needs authorized local artifacts before ML endpoints can work.
 - **Forecast:** the API serves history and forecast values from CSV files; it does not calculate a new forecast per request.
 
@@ -80,6 +80,8 @@ Docker, Airflow, MLflow, and Flask are not present in the inspected project.
     api/                  FastAPI routes and ML feature/model helpers
     data/README.md        Required local data files; no data is published
     docs/                 Architecture, DWH, ETL, BI, ML, API, web, security notes
+    sql/                  Schema-only DDL and read-only aggregate SQL examples
+    screenshots/          Selected application, Power BI, and Talend screenshots
     frontend/             Angular application
     models/README.md      Local model artifact requirements
     notebooks/            Sanitized notebook copy without outputs or secrets
@@ -125,17 +127,40 @@ The API check exercises health, metadata, amount, employment, comparable contrac
 ## Limitations and future improvements
 
 - Keep original Excel files, DWH exports, contract extracts, and fitted models outside public Git.
-- Add sanitized Talend job exports and DWH DDL only after confirming redistribution rights and removing credentials and personal data.
-- Add sanitized screenshots of the actual Power BI report and web pages.
+- Add sanitized Talend job exports only after confirming redistribution rights and removing credentials and personal data. The published SQL DDL is schema-only and contains no data rows.
+- Obtain company approval before redistributing aggregate portfolio screenshots or totals.
 - Add automated API tests using an isolated synthetic fixture.
 - Restrict CORS and add authentication, logging, and deployment configuration before public production use.
 - Collect verified repayment and post-financing outcome data before designing default-risk or real employment-impact models.
 
 ## Screenshots
 
-No approved screenshot files were present in the inspected project. No synthetic or misleading screenshots have been added.
+Selected real application and Power BI screenshots, captured on 14 October 2026, are included below. The embedded report remains subject to Power BI tenant access.
+
+### Application
+
+| Application home | Prediction form |
+|---|---|
+| ![Application home](screenshots/web-home.png) | ![Prediction form](screenshots/web-prediction.png) |
+
+| Forecast page | Method page |
+|---|---|
+| ![Forecast page](screenshots/web-forecast.png) | ![Method page](screenshots/web-methodology.png) |
+
+### Power BI report pages
+
+| Overview | Portfolio |
+|---|---|
+| ![Overview page](screenshots/powerbi-overview.png) | ![Portfolio page](screenshots/powerbi-portfolio.png) |
+
+| Geography | Employment and rates |
+|---|---|
+| ![Geography page](screenshots/powerbi-geography.png) | ![Employment and rates page](screenshots/powerbi-employment-rates.png) |
+
+One Talend job screenshot is included as an example of the local ETL design. It does not replace the original job files or prove that a job ran successfully.
+
+![Talend beneficiary and dimensions job](screenshots/talend-beneficiary-dimensions-job.png)
 
 ## License
 
 No open-source license is included. This is an internship project that depends on company data and external report configuration; the owner/company should decide licensing and redistribution rights before choosing a license.
-
