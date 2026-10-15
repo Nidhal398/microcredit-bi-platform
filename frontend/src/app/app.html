@@ -1,0 +1,30 @@
+<header class="entete">
+  <div class="entete-in">
+    <div class="logo" aria-hidden="true">MC</div>
+    <div class="entete-texte">
+      <div class="entete-org">Pilotage &amp; analyse</div>
+      <div class="entete-titre">Microcrédit · Intelligence de portefeuille</div>
+    </div>
+  </div>
+</header>
+<div class="filet"></div>
+
+<nav class="nav" aria-label="Navigation principale">
+  <div class="conteneur nav-in">
+    @for (l of liens; track l.chemin) {
+      <a class="nav-lien" [routerLink]="l.chemin" routerLinkActive="sel"
+         [routerLinkActiveOptions]="{ exact: l.exact }">
+        <span>{{ l.libelle }}</span>
+      </a>
+    }
+  </div>
+</nav>
+
+<main class="conteneur page">
+  <router-outlet />
+</main>
+
+<footer class="pied">
+  Plateforme d’analyse du portefeuille de microcrédits
+</footer>
+

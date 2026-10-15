@@ -1,0 +1,45 @@
+# Python environments and generated files
+.venv/
+.venv-*/
+venv/
+__pycache__/
+*.py[cod]
+*.log
+.ipynb_checkpoints/
+
+# JavaScript dependencies and build output
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.vscode/
+coverage/
+
+# Local credentials and private configuration
+.env
+.env.*
+!.env.example
+credentials*
+secrets*
+*.key
+*.pem
+
+# Private source notebook/data exports and derived model artifacts
+MLStage.ipynb
+data/*
+!data/README.md
+models/*
+!models/README.md
+*.pkl
+*.pickle
+*.joblib
+*.parquet
+*.xlsx
+*.xls
+*.pbix
+*.pbit
+*.pbip
+
+# Existing frontend-only Git history; consolidated publication starts clean
+frontend/.git/
+

@@ -1,0 +1,8 @@
+{
+  "^/predict/.*": { "target": "http://127.0.0.1:8000", "secure": false, "changeOrigin": true },
+  "^/segment$":   { "target": "http://127.0.0.1:8000", "secure": false, "changeOrigin": true },
+  "^/prevision$": { "target": "http://127.0.0.1:8000", "secure": false, "changeOrigin": true },
+  "^/meta$":      { "target": "http://127.0.0.1:8000", "secure": false, "changeOrigin": true },
+  "^/health$":    { "target": "http://127.0.0.1:8000", "secure": false, "changeOrigin": true }
+}
+

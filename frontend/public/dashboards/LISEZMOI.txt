@@ -1,0 +1,2 @@
+Placez ici les exports PNG de vos pages Power BI : vue-ensemble.png, portefeuille.png, produits.png, geographie.png
+
